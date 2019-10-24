@@ -12,4 +12,4 @@ run:
 
 clean:
 	rm *.o
-	rm *~
+	rm test_list
