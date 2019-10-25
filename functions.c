@@ -26,3 +26,21 @@ struct node * free_list(struct node *n){
   }
   return temp;
 }
+
+struct node * remove1(struct node *front, int data){
+  struct node *first = malloc(sizeof(struct node));
+  first = front;
+  struct node *temp;
+  while (front->next != 0 && front->i != data){
+    temp = front;
+    front = front->next;
+  }
+  if (first == front){
+    first = front->next;
+  }
+  else if (first->next != 0){
+    temp->next = front->next;
+  }
+  free(front);
+  return first;
+}
