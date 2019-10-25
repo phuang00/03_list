@@ -3,7 +3,7 @@
 void print_list(struct node *n){
   printf("[ ");
   if (n != NULL){
-    while (n->next != 0){
+    while (n != NULL){
       printf("%d ", n->i);
       n = n->next;
     }
