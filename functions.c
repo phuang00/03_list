@@ -17,7 +17,7 @@ struct node * insert_front(struct node *n, int x){
 }
 
 struct node * free_list(struct node *n){
-  struct node *temp = malloc(sizeof(struct node));
+  struct node *temp;
   while (n->next != 0){
     printf("freeing node: %d\n", n->i);
     temp = n->next;
@@ -28,7 +28,7 @@ struct node * free_list(struct node *n){
 }
 
 struct node * remove1(struct node *front, int data){
-  struct node *first = malloc(sizeof(struct node));
+  struct node *first;
   first = front;
   struct node *temp;
   while (front->next != 0 && front->i != data){
