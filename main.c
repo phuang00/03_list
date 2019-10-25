@@ -38,5 +38,11 @@ int main() {
   printf("Printing list:\n");
   print_list(list);
 
+  printf("Freeing empty list\n");
+  list = free_list(list);
+
+  printf("Printing list:\n");
+  print_list(list);
+
   return 0;
 }
