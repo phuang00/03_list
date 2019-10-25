@@ -38,5 +38,7 @@ int main() {
   printf("Printing list:\n");
   print_list(list);
 
+  free(list);
+
   return 0;
 }
