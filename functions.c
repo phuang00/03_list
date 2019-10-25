@@ -20,10 +20,10 @@ struct node * insert_front(struct node *n, int x){
 
 struct node * free_list(struct node *n){
   struct node *temp;
-  while (n->next != 0){
+  while (n != 0){
     printf("freeing node: %d\n", n->i);
-    temp = n->next;
     free(n);
+    temp = n->next;
     n = temp;
   }
   return temp;

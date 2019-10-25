@@ -1,7 +1,7 @@
 #include "headers.h"
 
 int main() {
-  struct node *list = calloc(1, sizeof(struct node));
+  struct node *list;
 
   printf("Printing empty list:\n");
   print_list(list);
