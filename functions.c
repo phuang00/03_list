@@ -2,9 +2,11 @@
 
 void print_list(struct node *n){
   printf("[ ");
-  while (n->next != 0){
-    printf("%d ", n->i);
-    n = n->next;
+  if (n != NULL){
+    while (n->next != 0){
+      printf("%d ", n->i);
+      n = n->next;
+    }
   }
   printf("]\n");
 }
