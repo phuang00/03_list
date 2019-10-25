@@ -2,11 +2,9 @@
 
 void print_list(struct node *n){
   printf("[ ");
-  if (n != NULL){
-    while (n != NULL){
-      printf("%d ", n->i);
-      n = n->next;
-    }
+  while (n != NULL){
+    printf("%d ", n->i);
+    n = n->next;
   }
   printf("]\n");
 }
@@ -19,8 +17,8 @@ struct node * insert_front(struct node *n, int x){
 }
 
 struct node * free_list(struct node *n){
-  struct node *temp;
-  while (n != 0){
+  struct node *temp = n;
+  while (n != NULL){
     printf("freeing node: %d\n", n->i);
     free(n);
     temp = n->next;
@@ -33,14 +31,14 @@ struct node * remove1(struct node *front, int data){
   struct node *first;
   first = front;
   struct node *temp;
-  while (front->next != 0 && front->i != data){
+  while (front->next != NULL && front->i != data){
     temp = front;
     front = front->next;
   }
   if (first == front){
     first = front->next;
   }
-  else if (first->next != 0){
+  else if (first->next != NULL){
     temp->next = front->next;
   }
   free(front);
