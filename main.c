@@ -1,7 +1,7 @@
 #include "headers.h"
 
 int main() {
-  struct node *list;
+  struct node *list = 0;
 
   printf("Printing empty list:\n");
   print_list(list);
