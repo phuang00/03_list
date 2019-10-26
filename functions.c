@@ -20,27 +20,31 @@ struct node * free_list(struct node *n){
   struct node *temp = n;
   while (n != NULL){
     printf("freeing node: %d\n", n->i);
-    free(n);
     temp = n->next;
+    free(n);
     n = temp;
   }
   return temp;
 }
 
-struct node * remove1(struct node *front, int data){
+struct node * remove_node(struct node *front, int data){
   struct node *first;
   first = front;
   struct node *temp;
-  while (front->next != NULL && front->i != data){
+  while (front != NULL){
+    if (front->i == data){
+      if (first == front){
+        first = front->next;
+
+      }
+      else{
+        temp->next = front->next;
+      }
+      free(front);
+      return first;
+    }
     temp = front;
     front = front->next;
   }
-  if (first == front){
-    first = front->next;
-  }
-  else if (first->next != NULL){
-    temp->next = front->next;
-  }
-  free(front);
   return first;
 }

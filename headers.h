@@ -9,4 +9,4 @@ struct node * insert_front(struct node *, int);
 
 struct node * free_list(struct node *);
 
-struct node * remove1(struct node *front, int data);
+struct node * remove_node(struct node *front, int data);

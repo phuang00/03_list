@@ -29,10 +29,11 @@ int main() {
   printf("Printing list:\n");
   print_list(list);
 
-  printf("Removing #s 0-9 from list.\n");
-  for (i = 9; i >= 0; i--){
+  printf("Removing #s 0-20 from list.\n");
+  for (i = 0; i <= 20; i++){
     printf("Removing %d\n", i);
-    list = remove1(list, i);
+    print_list(list);
+    list = remove_node(list, i);
   }
 
   printf("Printing list:\n");
